@@ -66,3 +66,23 @@
 
 data: lv_purchase_req_num type banfn value '0010000061',
       gt_prheader         type bapimereqheader.
+      
+      
+
+data:
+  gt_return                type standard table of bapiret2,
+  gt_pritem                type standard table of bapimereqitem,
+  gt_praccount             type standard table of bapimereqaccount,
+  gt_praddrdelivery        type standard table of bapimerqaddrdelivery,
+  gt_pritemtext            type standard table of bapimereqitemtext,
+  gt_prheadertext          type standard table of bapimereqheadtext,
+  gt_extensionout          type standard table of bapiparex,
+  gt_allversions           type standard table of bapimedcm_allversions,
+  gt_prcomponents          type standard table of bapimereqcomponent,
+  gt_serialnumbers         type standard table of bapimereqserialno,
+  gt_serviceoutline        type standard table of bapi_srv_outline,
+  gt_servicelines          type standard table of bapi_srv_service_line,
+  gt_servicelimit          type standard table of bapi_srv_limit_data,
+  gt_servicecontractlimits type standard table of bapi_srv_contract_limits,
+  gt_serviceaccount        type standard table of bapi_srv_acc_data,
+  gt_servicelongtexts      type standard table of bapi_srv_longtexts.
