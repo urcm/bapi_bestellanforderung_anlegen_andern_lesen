@@ -62,3 +62,7 @@
 *tables  servicecontractlimits   BAPI Structure for Contract Limits
 *tables  serviceaccount   BAPI Structure for Account Assignment to Services and Limits
 *tables  servicelongtexts   BAPI Structure for Long Texts in Service Package
+
+
+data: lv_purchase_req_num type banfn value '0010000061',
+      gt_prheader         type bapimereqheader.
