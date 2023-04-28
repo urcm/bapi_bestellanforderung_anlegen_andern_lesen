@@ -118,3 +118,8 @@ data:
     serviceaccount        = gt_serviceaccount          " BAPI Structure for Account Assignment to Services and Limits
     servicelongtexts      = gt_servicelongtexts.        " BAPI Structure for Long Texts in Service Package
 
+cl_demo_output=>write_data( gt_prheader ).
+cl_demo_output=>write_data( gt_return ).
+cl_demo_output=>write_data( gt_pritem ).
+cl_demo_output=>write_data( gt_praccount ).
+cl_demo_output=>write_data( gt_praddrdelivery ).
