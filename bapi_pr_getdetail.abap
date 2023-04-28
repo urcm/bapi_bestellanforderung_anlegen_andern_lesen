@@ -86,3 +86,35 @@ data:
   gt_servicecontractlimits type standard table of bapi_srv_contract_limits,
   gt_serviceaccount        type standard table of bapi_srv_acc_data,
   gt_servicelongtexts      type standard table of bapi_srv_longtexts.
+  
+  call function 'BAPI_PR_GETDETAIL'
+  exporting
+    number                = lv_purchase_req_num    " Purchase Requisition Number
+*   account_assignment    = SPACE    " Account Assignment Data
+*   item_text             = SPACE    " Item Text
+*   header_text           = SPACE    " Header Txt
+*   delivery_address      = SPACE    " Delivery address
+*   version               = SPACE    " Version Management
+*   sc_components         = SPACE    " Subcontracting Components
+*   serial_numbers        = SPACE    " Serial Numbers
+*   services              = SPACE    " External Services
+  importing
+    prheader              = gt_prheader   " Transfer Structure for Enjoy Purchase Req. - Header
+  tables
+    return                = gt_return   " Return Parameter(s)
+    pritem                = gt_pritem    " Transfer Structure for Enjoy Purchase Req. - Item Data
+    praccount             = gt_praccount               " Transfer Structure for Enjoy Purchase Req. - Acct Assignment
+    praddrdelivery        = gt_praddrdelivery          " PO Item: Address Structure BAPIADDR1 for Inbound Delivery
+    pritemtext            = gt_pritemtext              " Transfer Structure for Enjoy Purchase Req. - Item Text
+    prheadertext          = gt_prheadertext            " Change Toolbar for Enjoy Purchase Req. - Header Text
+    extensionout          = gt_extensionout            " Reference Structure for BAPI Parameters EXTENSIONIN/EXTENSIO
+    allversions           = gt_allversions             " Version Management - All Version Data
+    prcomponents          = gt_prcomponents            " BAPI Structure for Components
+    serialnumbers         = gt_serialnumbers           " Serial Numbers in Purchase Requisition BAPI
+    serviceoutline        = gt_serviceoutline          " BAPI Structure for Outline of Service Package
+    servicelines          = gt_servicelines            " BAPI Structure for Service Lines
+    servicelimit          = gt_servicelimit            " BAPI Structure for Limit of Service Package
+    servicecontractlimits = gt_servicecontractlimits   " BAPI Structure for Contract Limits
+    serviceaccount        = gt_serviceaccount          " BAPI Structure for Account Assignment to Services and Limits
+    servicelongtexts      = gt_servicelongtexts.        " BAPI Structure for Long Texts in Service Package
+
