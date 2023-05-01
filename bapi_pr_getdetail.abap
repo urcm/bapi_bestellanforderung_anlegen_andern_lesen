@@ -135,3 +135,4 @@ cl_demo_output=>write_data( gt_servicelimit ).
 cl_demo_output=>write_data( gt_servicecontractlimits ).
 cl_demo_output=>write_data( gt_serviceaccount ).
 cl_demo_output=>write_data( gt_servicelongtexts ).
+cl_demo_output=>display(  ).
