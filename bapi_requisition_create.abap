@@ -39,3 +39,7 @@
 *tables  requisition_services_text   Text for Service Line
 *tables  requisition_addrdelivery   PO Item: Address Structure BAPIADDR1 for Inbound Delivery
 *tables  extensionin   Reference Structure for BAPI Parameters EXTENSIONIN/EXTENSIO
+
+
+data: gt_requisition_items type standard table of bapiebanc,
+      gt_return            type standard table of bapireturn.
