@@ -43,3 +43,6 @@
 
 data: gt_requisition_items type standard table of bapiebanc,
       gt_return            type standard table of bapireturn.
+
+data: gs_requisition_items  like line of gt_requisition_items.
+data: gt_num type banfn.
