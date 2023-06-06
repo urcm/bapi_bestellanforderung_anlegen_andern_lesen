@@ -46,3 +46,16 @@ data: gt_requisition_items type standard table of bapiebanc,
 
 data: gs_requisition_items  like line of gt_requisition_items.
 data: gt_num type banfn.
+
+gs_requisition_items-preq_item  = '00010'.
+gs_requisition_items-doc_type = 'NB'.
+gs_requisition_items-pur_group = '001'.
+gs_requisition_items-created_by = 'XEMIR'.
+gs_requisition_items-material = '000000000000000216'.
+gs_requisition_items-plant    = 'ZM03'.
+gs_requisition_items-store_loc    = 'L001'.
+gs_requisition_items-quantity = '10'.
+gs_requisition_items-deliv_date = sy-datum + 20.
+gs_requisition_items-rel_date = 'sy-datum' .
+gs_requisition_items-currency = 'EUR'.
+append gs_requisition_items to gt_requisition_items.
