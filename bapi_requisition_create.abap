@@ -57,5 +57,26 @@ gs_requisition_items-store_loc    = 'L001'.
 gs_requisition_items-quantity = '10'.
 gs_requisition_items-deliv_date = sy-datum + 20.
 gs_requisition_items-rel_date = 'sy-datum' .
+
+
+call function 'BAPI_REQUISITION_CREATE'
+*  exporting
+*    skip_items_with_error          =     " Skip Faulty Items
+*    automatic_source               = 'X'    " Automatic Source Determination
+*  importing
+*    number                         =     " Purchase Requisition Number
+  tables
+    requisition_items = gt_requisition_items   " Item Data
+*   requisition_account_assignment =     " Account Assignment Data for Item
+*   requisition_item_text          =     " Text for Item
+*   requisition_limits             =     " Limits
+*   requisition_contract_limits    =     " Limits with Contract Reference
+*   requisition_services           =     " Services
+*   requisition_srv_accass_values  =     " Value/Link to Service Account Assignment
+    return            = gt_return   " Return Messages
+*   requisition_services_text      =     " Text for Service Line
+*   requisition_addrdelivery       =     " PO Item: Address Structure BAPIADDR1 for Inbound Delivery
+*   extensionin       =     " Reference Structure for BAPI Parameters EXTENSIONIN/EXTENSIO
+  .
 gs_requisition_items-currency = 'EUR'.
 append gs_requisition_items to gt_requisition_items.
