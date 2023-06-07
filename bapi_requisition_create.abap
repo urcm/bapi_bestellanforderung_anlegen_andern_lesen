@@ -57,7 +57,8 @@ gs_requisition_items-store_loc    = 'L001'.
 gs_requisition_items-quantity = '10'.
 gs_requisition_items-deliv_date = sy-datum + 20.
 gs_requisition_items-rel_date = 'sy-datum' .
-
+gs_requisition_items-currency = 'EUR'.
+append gs_requisition_items to gt_requisition_items.
 
 call function 'BAPI_REQUISITION_CREATE'
 *  exporting
@@ -78,5 +79,10 @@ call function 'BAPI_REQUISITION_CREATE'
 *   requisition_addrdelivery       =     " PO Item: Address Structure BAPIADDR1 for Inbound Delivery
 *   extensionin       =     " Reference Structure for BAPI Parameters EXTENSIONIN/EXTENSIO
   .
-gs_requisition_items-currency = 'EUR'.
-append gs_requisition_items to gt_requisition_items.
+
+
+
+
+loop at gt_return assigning field-symbol(<fs_return>).
+
+endloop.
