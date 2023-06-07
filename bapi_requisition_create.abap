@@ -84,5 +84,12 @@ call function 'BAPI_REQUISITION_CREATE'
 
 
 loop at gt_return assigning field-symbol(<fs_return>).
-
+  if <fs_return>-type eq 'E'.
+    write :/ <fs_return>-message.
+  else.
+    cl_demo_output=>write_data( gt_num ).
+    cl_demo_output=>write_data( gt_return ).
+    cl_demo_output=>write_data( gt_requisition_items ).
+    cl_demo_output=>display(  ).
+  endif.
 endloop.
